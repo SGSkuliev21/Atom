@@ -1,4 +1,21 @@
-#include "blocks.h"
+#include "precompile.h"
+
+Blocks::Blocks(int blockHeight, int blockWidth)
+{
+	this->blockHeight = blockHeight;
+	this->blockWidth = blockWidth;
+}
+
+void Blocks::collision()
+{
+	for (int i = 0; i < 48; i++)
+	{
+		if (CheckCollisionRecs(ball.ball, block[i].rec));
+		{
+			//bool = false draw rec ako e true
+		}
+	}
+}
 
 void Blocks::drawRectangle()
 {

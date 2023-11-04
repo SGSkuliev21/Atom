@@ -134,11 +134,13 @@
     <ClCompile Include="ball.cpp" />
     <ClCompile Include="blocks.cpp" />
     <ClCompile Include="mainLoop.cpp" />
+    <ClCompile Include="paddle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ball.h" />
     <ClInclude Include="blocks.h" />
     <ClInclude Include="mainLoop.h" />
+    <ClInclude Include="paddle.h" />
     <ClInclude Include="precompile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

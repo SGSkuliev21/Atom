@@ -8,7 +8,7 @@ protected:
     Blocks blocks;
 
 private:
-    void draw();   
+    void draw(); 
 
 public:
     

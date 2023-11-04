@@ -7,7 +7,7 @@ void Game::draw()
     while (!WindowShouldClose())
     {
         BeginDrawing(); //start drawing
-        DrawText("ATOM", 450, 350, 50, WHITE);
+        drawRectangle();
         EndDrawing();
     }
 
