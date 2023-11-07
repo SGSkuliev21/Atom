@@ -1,32 +1,27 @@
 #include "precompile.h"
+#include "paddle.h"
 
-Paddle::Paddle(int paddleStartX, int paddleStartYint, int paddleX, int paddleY)
+Paddle::Paddle(int paddleX, int paddleY)
 {
-	this->paddleStartX = paddleStartX;
-	this->paddleStartY = paddleStartY;
-	this->paddleY = paddleY;
 	this->paddleX = paddleX;
+	this->paddleY = paddleY;
 }
 
-void Paddle::startingPosition(int paddleStartX, int paddleStartY)
+
+void Paddle::drawPaddle()
 {
-	paddleStartX = 300;
-	paddleStartY = 75;
+	DrawRectangle(paddleX, paddleY, 200, 10, WHITE);
 }
 
-void Paddle::drawPaddle(int paddleStartX, int paddleStartY)
+void Paddle::paddleMovement()
 {
-	DrawRectangle(paddleStartX, paddleStartY, 50, 50, BLACK);
-}
-
-void Paddle::paddleMovement(int paddleX)
-{
-	if (IsKeyPressed(KEY_LEFT))
+	if (IsKeyDown(KEY_A) || IsKeyDown(KEY_LEFT))
 	{
-		paddleX = paddleX - 3;
+		paddleX -= 10;
 	}
-	if (IsKeyPressed(KEY_RIGHT))
+	if ((IsKeyDown(KEY_D)) || IsKeyDown(KEY_RIGHT))
 	{
-		paddleX = paddleX + 3;
+		std::cout << "sasho";
+		paddleX += 10;
 	}
 }

@@ -1,14 +1,18 @@
 #include "mainLoop.h"
+#include "precompile.h"
 
-void Game::draw()
+Game::Game() : paddle(100, 100) {}
+
+void Game::runGame()
 { 
-
-    InitWindow(600, 800, "Atom");
-    while (!WindowShouldClose())
+    InitWindow(1200, 800, "Atom");
+    while(!WindowShouldClose())
     {
-        BeginDrawing(); //start drawing
-        drawRectangle();
+        BeginDrawing();
+        ClearBackground(RAYWHITE);
+        //paddle.drawPaddle();
+        paddle.paddleMovement();
         EndDrawing();
     }
-
+    CloseWindow();
 }

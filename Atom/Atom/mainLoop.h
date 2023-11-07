@@ -1,15 +1,14 @@
 #pragma once
 #include "precompile.h"
+#include "blocks.h"
+#include "paddle.h"
 
-class Game :public Ball, Blocks {
-
-protected:
-    Ball ball;
-    Blocks blocks;
-
+class Game{
 private:
-    void draw(); 
+    Blocks blocks;
+    Paddle paddle;
 
 public:
-    
+    Game();
+    void runGame();
 };
