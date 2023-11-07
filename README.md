@@ -61,4 +61,4 @@
 ## 📩 How to Install
 
 <p>To install the repostory, you have to type this 👇 in CMD.
-<pre>git clone https://github.com/codingburgas/2223-9th-grade-sprint-math-games-mathsolvers.git</pre>
+<pre>git clone https://github.com/SGSkuliev21/Atom.git</pre>
