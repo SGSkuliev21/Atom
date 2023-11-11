@@ -3,7 +3,7 @@
 Blocks::Blocks()
 {
     blockHeight = 50;
-    blockWidth = 100;
+    blockWidth = 150;
 
     for (int rows = 0; rows < 12; ++rows)
     {
