@@ -4,7 +4,7 @@
 #include "paddle.h"
 #include "ball.h"
 
-class Game{
+class Game {
 private:
     Blocks blocks;
     Paddle paddle;
@@ -13,9 +13,10 @@ private:
 public:
     Game();
 
-    void update();
     void draw();
-    void ballCollision();
+    void update();
 
     void runGame();
+    void collision();
+    void loseGame();
 };

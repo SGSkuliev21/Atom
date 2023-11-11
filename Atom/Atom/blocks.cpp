@@ -2,34 +2,45 @@
 
 Blocks::Blocks()
 {
-    blockHeight = 25;
-    blockWidth = 50;
+    blockHeight = 50;
+    blockWidth = 100;
 
-	for (int rows = 1; rows <= 12; ++rows)
-	{
-		for (int cols = 1; cols <= 4; ++cols)
+    for (int rows = 0; rows < 12; ++rows)
+    {
+        for (int cols = 0; cols < 4; ++cols) 
         {
-			blocks[rows][cols].rec.x = cols * blockWidth + (GetScreenWidth() - 4 * blockWidth) / 2;
-			blocks[rows][cols].rec.y = rows * blockHeight + (GetScreenHeight() - 12 * blockHeight) / 2;
-			blocks[rows][cols].rec.width = blockWidth;
-			blocks[rows][cols].rec.height = blockHeight;
+            blocks[rows][cols].color = 
+            {
+                (unsigned char)GetRandomValue(0, 255),
+                (unsigned char)GetRandomValue(0, 255),
+                (unsigned char)GetRandomValue(0, 255),
+                255
+            };
         }
     }
 
-	for (int i = 0; i < 48; ++i) {
-		colors[i] = { (unsigned char)GetRandomValue(0, 255),
-					 (unsigned char)GetRandomValue(0, 255),
-					 (unsigned char)GetRandomValue(0, 255), 255 };
-	}
+    for (int rows = 0; rows < 12; ++rows)
+    {
+        for (int cols = 0; cols < 4; ++cols)
+        {
+            this->blocks[rows][cols].rec.x = xCoordinates[rows];
+            this->blocks[rows][cols].rec.y = yCoordinates[cols];
+            this->blocks[rows][cols].rec.width = blockWidth;
+            this->blocks[rows][cols].rec.height = blockHeight;
+        }
+    }
 }
 
 void Blocks::drawRectangle()
 {
-	for (int rows = 1; rows <= 12; ++rows)
-	{
-		for (int cols = 1; cols <= 4; ++cols)
+    for (int rows = 0; rows < 12; rows++)
+    {
+        for (int cols = 0; cols < 4; cols++)
         {
-            DrawRectangleRec(blocks[rows][cols].rec, colors[rows * 12 + cols]);
+            if (blocks[rows][cols].isCollided)
+            {
+                DrawRectangleRec(this->blocks[rows][cols].rec, this->blocks[rows][cols].color);
+            }
         }
     }
 }

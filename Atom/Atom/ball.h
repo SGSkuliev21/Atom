@@ -1,15 +1,17 @@
 #pragma once
 #include "precompile.h"
 #include "paddle.h"
+#include "blocks.h"
 
 class Ball {
-private:
-    float ballX, ballY;
-    float speedBallX, speedBallY;
 
-    Rectangle ball;
+
 public:
+    Vector2 position;
+    float radius;
+    float speedBallX, speedBallY;
     Ball();
 
     void drawBall();
+    void moveBall();
 };

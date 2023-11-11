@@ -2,13 +2,18 @@
 
 Ball::Ball()
 {
-    speedBallX = 20;
-    speedBallY = 20;
+    speedBallX = 2;
+    speedBallY = 2;
 
-    ball = { static_cast<float>(GetScreenWidth() / 2), static_cast<float>(GetScreenHeight() / 2), 15, 15 };
+    position = { 400, 400 };
+    radius = 15;
 }
 
-void Ball::drawBall()
-{
-    DrawRectangleRec(ball, RED);
+void Ball::drawBall() {
+    DrawCircle(position.x, position.y, radius, RED);
+}
+
+void Ball::moveBall() {
+    position.x += speedBallX;
+    position.y += speedBallY;
 }

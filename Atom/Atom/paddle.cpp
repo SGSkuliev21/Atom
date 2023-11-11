@@ -3,11 +3,11 @@
 
 Paddle::Paddle()
 {
-   paddleX = GetScreenWidth() / 2;
-   paddleY = 750;
-   speed = 5;
+    paddleX = 500;
+    paddleY = 650;
+    speed = 300;
 
-   paddle = { paddleX, paddleY, 100, 15 };
+    paddle = { paddleX, paddleY, 100, 15 };
 }
 
 void Paddle::drawPaddle() {

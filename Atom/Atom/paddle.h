@@ -2,10 +2,11 @@
 #include "precompile.h"
 class Paddle {
 private:
-    Rectangle paddle;
+
     float speed;
     float paddleX, paddleY;
 public:
+    Rectangle paddle;
     Paddle();
     void drawPaddle();
     void paddleMovement();
