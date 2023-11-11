@@ -1,21 +1,15 @@
 #pragma once
 #include "precompile.h"
+#include "paddle.h"
 
-class Ball: public Paddle {
-
+class Ball {
 private:
-	Paddle paddle;
-	float ballX, ballY;
-	int speedBallX, speedBallY;
-	
+    float ballX, ballY;
+    float speedBallX, speedBallY;
+
+    Rectangle ball;
 public:
-	Ball() : ballX(0.0f), ballY(0.0f), speedBallX(0), speedBallY(0) {};
-	Ball(float ballX, float ballY, int speedBallX, int speedBallY, Paddle paddle);
-	Rectangle ball;
- 
-	void drawBall();
-	void ballMovement();
-	void ballIsCollided(int speedBallX, int speedBallY);
-	void ballBorder(int BallX, int BallY, int speedBallX, int speedBallY);
-	void ballCollidedPaddle();
+    Ball();
+
+    void drawBall();
 };

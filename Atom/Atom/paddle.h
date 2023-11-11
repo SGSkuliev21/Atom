@@ -1,13 +1,12 @@
 #pragma once
 #include "precompile.h"
 class Paddle {
-
 private:
-	int paddleX;
-	int paddleY;
-
+    Rectangle paddle;
+    float speed;
+    float paddleX, paddleY;
 public:
-	Paddle(int paddleX, int paddleY);
-	void drawPaddle();
-	void paddleMovement();
+    Paddle();
+    void drawPaddle();
+    void paddleMovement();
 };

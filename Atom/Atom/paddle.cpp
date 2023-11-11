@@ -1,27 +1,27 @@
 #include "precompile.h"
 #include "paddle.h"
 
-Paddle::Paddle(int paddleX, int paddleY)
+Paddle::Paddle()
 {
-	this->paddleX = paddleX;
-	this->paddleY = paddleY;
+   paddleX = GetScreenWidth() / 2;
+   paddleY = 750;
+   speed = 5;
+
+   paddle = { paddleX, paddleY, 100, 15 };
 }
 
-
-void Paddle::drawPaddle()
-{
-	DrawRectangle(paddleX, paddleY, 200, 10, WHITE);
+void Paddle::drawPaddle() {
+    DrawRectangleRec(paddle, RED);
 }
 
-void Paddle::paddleMovement()
-{
-	if (IsKeyDown(KEY_A) || IsKeyDown(KEY_LEFT))
-	{
-		paddleX -= 10;
-	}
-	if ((IsKeyDown(KEY_D)) || IsKeyDown(KEY_RIGHT))
-	{
-		std::cout << "sasho";
-		paddleX += 10;
-	}
+void Paddle::paddleMovement() {
+    if (IsKeyDown(KEY_A)) {
+        paddle.x -= speed * GetFrameTime();
+    }
+
+    if (IsKeyDown(KEY_D)) {
+        paddle.x += speed * GetFrameTime();
+    }
+
+    paddle.x = Clamp(paddle.x, 0, GetScreenWidth() - paddle.width);
 }

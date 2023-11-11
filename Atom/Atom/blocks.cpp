@@ -1,27 +1,35 @@
-#include "precompile.h"
+#include "blocks.h"
 
-Blocks::Blocks(int blockHeight, int blockWidth)
+Blocks::Blocks()
 {
-	this->blockHeight = blockHeight;
-	this->blockWidth = blockWidth;
-}
+    blockHeight = 25;
+    blockWidth = 50;
 
+	for (int rows = 1; rows <= 12; ++rows)
+	{
+		for (int cols = 1; cols <= 4; ++cols)
+        {
+			blocks[rows][cols].rec.x = cols * blockWidth + (GetScreenWidth() - 4 * blockWidth) / 2;
+			blocks[rows][cols].rec.y = rows * blockHeight + (GetScreenHeight() - 12 * blockHeight) / 2;
+			blocks[rows][cols].rec.width = blockWidth;
+			blocks[rows][cols].rec.height = blockHeight;
+        }
+    }
+
+	for (int i = 0; i < 48; ++i) {
+		colors[i] = { (unsigned char)GetRandomValue(0, 255),
+					 (unsigned char)GetRandomValue(0, 255),
+					 (unsigned char)GetRandomValue(0, 255), 255 };
+	}
+}
 
 void Blocks::drawRectangle()
 {
-	for (int i = 0; i < 48; i++)
+	for (int rows = 1; rows <= 12; ++rows)
 	{
-		if (CheckCollisionRecs(ball.ball, block[i].rec));
-		{
-			boolBlock.isCollided = true;
-		}
-	}
-
-	for (int rows = 1; rows <= 12; rows++)
-	{
-		for (int cols = 1; cols <= 4; cols++)
-		{			
-			DrawRectangle(5 * rows + 5, 5 * cols + 5, 50, 25, randomColor);		
-		}
-	}
+		for (int cols = 1; cols <= 4; ++cols)
+        {
+            DrawRectangleRec(blocks[rows][cols].rec, colors[rows * 12 + cols]);
+        }
+    }
 }

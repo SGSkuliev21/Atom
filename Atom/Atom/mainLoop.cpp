@@ -1,7 +1,9 @@
 #include "mainLoop.h"
 #include "precompile.h"
 
-Game::Game() : paddle(100, 100) {}
+Game::Game(){
+
+}
 
 void Game::runGame()
 { 
