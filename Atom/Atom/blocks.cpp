@@ -37,9 +37,12 @@ void Blocks::drawRectangle()
     {
         for (int cols = 0; cols < 4; cols++)
         {
-            if (blocks[rows][cols].isCollided)
+            if (blocks[rows][cols].isHittable)
             {
-                DrawRectangleRec(this->blocks[rows][cols].rec, this->blocks[rows][cols].color);
+                DrawRectangleRec(blocks[rows][cols].rec, blocks[rows][cols].color);
+            }
+            else
+            {
             }
         }
     }

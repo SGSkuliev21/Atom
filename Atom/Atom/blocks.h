@@ -11,14 +11,14 @@ private:
     int blockHeight;
     int blockWidth;
 
-    float xCoordinates[4] = { 50, 200, 350, 500 };
-    float yCoordinates[12] = { 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200 };
+    float xCoordinates[4] = { 500, 700, 900, 1200};
+    float yCoordinates[12] = { 0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100 };
 
 public:
 
     struct Block {
         Rectangle rec;
-        bool isCollided = true;
+        bool isHittable = true;
         Color color;
     };
 

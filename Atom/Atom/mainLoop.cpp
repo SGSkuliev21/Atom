@@ -48,8 +48,21 @@ void Game::collision()
         {
             if(CheckCollisionCircleRec(ball.position, ball.radius, blocks.blocks[i][j].rec))
             {
-                blocks.blocks[i][j].isCollided = false;
-                ball.speedBallY *= -1;
+                Vector2 blockCenter = { blocks.blocks[i][j].rec.x + blocks.blocks[i][j].rec.width / 2, blocks.blocks[i][j].rec.y + blocks.blocks[i][j].rec.height / 2 };
+                Vector2 ballToBlock = { ball.position.x - blockCenter.x, ball.position.x - blockCenter.y };
+
+                if (abs(ballToBlock.x) > abs(ballToBlock.y))
+                {
+                    ball.speedBallX *= -1;
+                }
+                else 
+                {
+                    ball.speedBallY *= -1;
+                }
+
+                blocks.blocks[i][j].isHittable = false;
+                blocks.blocks[i][j].rec.x = 100000;
+                blocks.blocks[i][j].rec.y = 100000;
             }
         }
     }
