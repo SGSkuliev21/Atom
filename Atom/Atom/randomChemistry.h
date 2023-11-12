@@ -1,18 +1,29 @@
 #pragma once
 #include "precompile.h"
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
 
-
-class randomChemistry {
+class randomChemistry 
+{
 private:
-    vector <string> lines;
-    string filename, line;
-    ifstream inputFile;
-    int counter;
+    std::vector<std::string>linesEl;
+    std::vector<std::string>linesEq;
+    std::string filenameEl, lineEl;
+    std::string filenameEq, lineEq;
+    std::ifstream inputFileEl;
+    std::ifstream inputFileEq;
+    int randomNumberEl;
+    int randomNumberEq;
+    std::string randomLineEl;
+    std::string randomLineEq;
+    const char* tempEq;
+    const char* temp;
+    Texture2D fontTexture;
+    Image fontImage;
 public:
-    void ChemistryElements();
-    void ChemistryReactions();
+    std::string getEquation();
+    randomChemistry();
+    const char* tempEl;
+    bool showEl = false;
+    void drawChemistryReactions(std::vector<Vector2> &equationsPos, std::vector<std::string> &equations);
 };
+
+

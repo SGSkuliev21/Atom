@@ -1,44 +1,51 @@
 #include "randomChemistry.h"
-#include <iostream>
-#include <fstream>
 #include <string>
-#include <vector>
 
-using namespace std;
-void ChemistryElements() {
-        string filename = "Chemistry_elements.txt";
 
-        ifstream inputFile(filename);
+randomChemistry::randomChemistry()
+{
+    srand(time(0));
+    
 
-        if (!inputFile.is_open()) {
-            cout << "I cannot be open! " << filename << endl;
-        }
-
-        vector <string> lines;
-
-        string line;
-        while (getline(inputFile, line)) {
-            lines.push_back(line);
-        }
-
-        inputFile.close();
-
+    std::string filenameEq = "./Chemistry_reactions.txt";
+    std::ifstream inputFileEq(filenameEq);
+    if (!inputFileEq.is_open())
+    {
+        std::cout << "I cannot be open! " << filenameEq << std::endl;
+    }
+    while (getline(inputFileEq, lineEq))
+    {
+        linesEq.push_back(lineEq);
+    }
+    randomLineEq = linesEq[rand() % 20];
+    tempEq = randomLineEq.c_str();
+    inputFileEq.close();
+   
 }
-void ChemistryReactions() {
-        string filename = "Chemistry_reactions.txt";
 
-        ifstream inputFile(filename);
+void randomChemistry::drawChemistryReactions(std::vector<Vector2>& equationsPos, std::vector<std::string>& equations)
+{
+    DrawText(tempEq, 450, 0, 30, BLACK);
+    for (int i = 0; i < equations.size(); i++)
+    {
+        DrawText(equations[i].c_str(), equationsPos[i].x, equationsPos[i].x, 30, BLACK);
+    }
+}
 
-        if (!inputFile.is_open()) {
-            cout << "I cannot be open! " << filename << endl;
-        }
-
-        vector <string> lines;
-
-        string line;
-        while (getline(inputFile, line)) {
-            lines.push_back(line);
-        }
-
-        inputFile.close();
+std::string randomChemistry::getEquation()
+{
+    std::string filenameEl = "./Chemistry_elements.txt";
+    std::ifstream inputFileEl(filenameEl);
+    if (!inputFileEl.is_open())
+    {
+        std::cout << "I cannot be open! " << filenameEl << std::endl;
+    }
+    while (getline(inputFileEl, lineEl))
+    {
+        linesEl.push_back(lineEl);
+    }
+    randomLineEl = linesEl[rand() % 20];
+    tempEl = randomLineEl.c_str();
+    inputFileEl.close();
+    return tempEl;
 }

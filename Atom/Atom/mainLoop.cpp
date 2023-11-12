@@ -1,10 +1,15 @@
 #include "mainLoop.h"
 #include "precompile.h"
 #include "ball.h"
+#include "randomChemistry.h"
 
 Ball ball;
 Paddle paddle;
 Blocks blocks;
+randomChemistry chem;
+
+std::vector<Vector2> equationsPos;
+std::vector<std::string> equations;
 
 Game::Game() {
 
@@ -12,6 +17,7 @@ Game::Game() {
 
 void Game::draw()
 {
+    chem.drawChemistryReactions(equationsPos,equations);
     blocks.drawRectangle();
     ball.drawBall();
     paddle.drawPaddle();
@@ -49,9 +55,9 @@ void Game::collision()
             if(CheckCollisionCircleRec(ball.position, ball.radius, blocks.blocks[i][j].rec))
             {
                 Vector2 blockCenter = { blocks.blocks[i][j].rec.x + blocks.blocks[i][j].rec.width / 2, blocks.blocks[i][j].rec.y + blocks.blocks[i][j].rec.height / 2 };
-                Vector2 ballToBlock = { ball.position.x - blockCenter.x, ball.position.x - blockCenter.y };
+                Vector2 ballCollideBlock = { ball.position.x - blockCenter.x, ball.position.x - blockCenter.y };
 
-                if (abs(ballToBlock.x) > abs(ballToBlock.y))
+                if (abs(ballCollideBlock.x) > abs(ballCollideBlock.y))
                 {
                     ball.speedBallX *= -1;
                 }
@@ -59,7 +65,8 @@ void Game::collision()
                 {
                     ball.speedBallY *= -1;
                 }
-
+                equationsPos.push_back(blockCenter);
+                equations.push_back(chem.getEquation());
                 blocks.blocks[i][j].isHittable = false;
                 blocks.blocks[i][j].rec.x = 100000;
                 blocks.blocks[i][j].rec.y = 100000;

@@ -1,20 +1,20 @@
-хлориране на калций
-хидриране на калций
-бромиране на калций
-хлориране на калий
-бромиране на калий
-хидриране на калий
-хлориране на натрий
-хидриране на натрий
-бромиране на натрий
-хлориране на магнезий
-хлориране на алуминий
-хлориране на желязо
-хлориране на мед
-взаимодействие на мед със сяра
-взаимодействие на мед с кислород
-взаимодействие на калций с кислород
-взаимодействие на калций със сяра
-взаимодействие на натрий със сяра
-взаимодействие между кислород и водород
-взаимодействие между въглероден оксид и калциев оксид
+Chlorination of Calcium
+Hydration of Calcium
+Bromination of Calcium
+Chlorination of Potassium
+Bromination of Potassium
+Hydration of Potassium
+Chlorination of Sodium
+Hydration of Sodium
+Bromination of Sodium
+Chlorination of Magnesium
+Chlorination of Aluminum
+Chlorination of Iron
+Chlorination of Copper
+Interaction of Copper with Sulfur
+Interaction of Copper with Oxygen
+Interaction of Calcium with Oxygen
+Interaction of Calcium with Sulfur
+Interaction of Sodium with Sulfur
+Interaction between Oxygen and Hydrogen
+Interaction between Carbon Oxide and Calcium Oxide

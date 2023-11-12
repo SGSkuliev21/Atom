@@ -41,9 +41,6 @@ void Blocks::drawRectangle()
             {
                 DrawRectangleRec(blocks[rows][cols].rec, blocks[rows][cols].color);
             }
-            else
-            {
-            }
         }
     }
 }
