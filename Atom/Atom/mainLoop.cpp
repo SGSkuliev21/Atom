@@ -7,6 +7,7 @@ Paddle paddle;
 Blocks blocks;
 randomChemistry chem;
 
+
 std::vector<Vector2> equationsPos;
 std::vector<std::string> equations;
 
