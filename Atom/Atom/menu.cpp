@@ -20,28 +20,42 @@ void mainMenu(SceneType& sceneState) {
     if (CheckCollisionPointRec(GetMousePosition(), Rectangle ({ 400, 358, 371, 104 }))) {
         menu_game = LoadTexture("img/buttons/game1.png");
         if (nextState) {
+            UnloadTexture(menu_game);
+            UnloadTexture(menu_about);
+            UnloadTexture(menu_quit);
+            UnloadTexture(background);
+            UnloadTexture(game_title);
             sceneState = GAME_MENU;
         }
     }
     if (CheckCollisionPointRec(GetMousePosition(), Rectangle({ 400, 479, 371, 104 }))) {
         menu_about = LoadTexture("img/buttons/info1.png");
         if (nextState) {
+            UnloadTexture(menu_game);
+            UnloadTexture(menu_about);
+            UnloadTexture(menu_quit);
+            UnloadTexture(background);
+            UnloadTexture(game_title);
             sceneState = INFO_MENU;
         }
     }
     if (CheckCollisionPointRec(GetMousePosition(), Rectangle({ 400, 613, 371, 104 }))) {
         menu_quit = LoadTexture("img/buttons/exit1.png");
         if (nextState) {
+            UnloadTexture(menu_game);
+            UnloadTexture(menu_about);
+            UnloadTexture(menu_quit);
+            UnloadTexture(background);
+            UnloadTexture(game_title);
             CloseWindow();
         }
     }
     DrawTexture(background, 0, 0, WHITE);
     DrawTexture(game_title, 400, 33, WHITE);
-
-    // Draw rectangles
     DrawTexture(menu_game, 400, 358, WHITE);
     DrawTexture(menu_about, 400, 479, WHITE);
     DrawTexture(menu_quit, 400, 613, WHITE);
+    
 
 }
 void infoMenu(SceneType& sceneState) {
@@ -55,6 +69,10 @@ void infoMenu(SceneType& sceneState) {
     if (CheckCollisionPointRec(GetMousePosition(), Rectangle({ 444, 661, 304, 86 }))) {
         menu_back = LoadTexture("img/buttons/back1.png");
         if (nextState) {
+            UnloadTexture(menu_back);
+            UnloadTexture(game_title);
+            UnloadTexture(rulesGame);
+            UnloadTexture(background);
             sceneState = MAIN_MENU;
         }
     }
@@ -76,12 +94,22 @@ void wonMenu(SceneType& sceneState) {
     if (CheckCollisionPointRec(GetMousePosition(), Rectangle({ 75, 628, 371, 103 }))) {
         menu_exit = LoadTexture("img/buttons/exit3.png");
         if (nextState) {
+            UnloadTexture(menu_back);
+            UnloadTexture(menu_exit);
+            UnloadTexture(game_title);
+            UnloadTexture(background);
+            UnloadTexture(text_won);
             CloseWindow();
         }
     }    
     if (CheckCollisionPointRec(GetMousePosition(), Rectangle({ 820, 628, 371, 103 }))) {
         menu_back = LoadTexture("img/buttons/back3.png");
         if (nextState) {
+            UnloadTexture(menu_back);
+            UnloadTexture(menu_exit);
+            UnloadTexture(game_title);
+            UnloadTexture(background);
+            UnloadTexture(text_won);
             sceneState = MAIN_MENU;
         }
     }
@@ -90,6 +118,7 @@ void wonMenu(SceneType& sceneState) {
     DrawTexture(game_title, 400, 33, WHITE);
     DrawTexture(menu_back, 820, 628, WHITE);
     DrawTexture(menu_exit, 75, 628, WHITE);
+
 }
 void lostMenu(SceneType& sceneState) {
     Texture2D menu_back = LoadTexture("img/buttons/back2.png");
@@ -103,12 +132,22 @@ void lostMenu(SceneType& sceneState) {
     if (CheckCollisionPointRec(GetMousePosition(), Rectangle({ 75, 628, 371, 103 }))) {
         menu_exit = LoadTexture("img/buttons/exit3.png");
         if (nextState) {
+            UnloadTexture(menu_back);
+            UnloadTexture(menu_exit);
+            UnloadTexture(game_title);
+            UnloadTexture(background);
+            UnloadTexture(text_lost);
             CloseWindow();
         }
     }    
     if (CheckCollisionPointRec(GetMousePosition(), Rectangle({ 820, 628, 371, 103 }))) {
         menu_back = LoadTexture("img/buttons/back3.png");
         if (nextState) {
+            UnloadTexture(menu_back);
+            UnloadTexture(menu_exit);
+            UnloadTexture(game_title);
+            UnloadTexture(background);
+            UnloadTexture(text_lost);
             sceneState = MAIN_MENU;
         }
     }
@@ -117,4 +156,5 @@ void lostMenu(SceneType& sceneState) {
     DrawTexture(game_title, 410, 33, WHITE);
     DrawTexture(menu_back, 820, 628, WHITE);
     DrawTexture(menu_exit, 75, 628, WHITE);
+
 }
