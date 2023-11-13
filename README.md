@@ -8,9 +8,9 @@
 
 <b>
 <a href = “https://github.com/1> 🟦 Stoyan Skuliev [ Scrum Trainer ] </a><br>
-<a href=“https://github.com/”> 🟥 Dimitar Byandov [ Frontend Developer] </a><br>
-<a href=“https://github.com/”> 🟨 Angel Angelov [ Backend Developer ] </a><br>
-<a href=“https://github.com/”> 🟩 Vicho Vichev [ Backend Developer ] </a><br>
+<a href=“https://github.com/”> 🟥 Dimitar Byandov [ FrontEnd Developer] </a><br>
+<a href=“https://github.com/”> 🟨 Angel Angelov [ BackEnd Developer ] </a><br>
+<a href=“https://github.com/”> 🟩 Vicho Vichev [ BackEnd Developer ] </a><br>
 </b>
 
 ## 💻 About
@@ -50,7 +50,7 @@
 
 <a href="">QA Documentation </a>
 
-<a href="">Team Documentation </a>
+<a href="">Documentation </a>
 
 <a href="">Presentation </a>
 
