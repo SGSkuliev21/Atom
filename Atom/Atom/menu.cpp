@@ -36,7 +36,7 @@ void mainMenu(SceneType& sceneState) {
         }
     }
     DrawTexture(background, 0, 0, WHITE);
-    DrawTexture(game_title, 74, 41, WHITE);
+    DrawTexture(game_title, 74, 41, BLACK);
 
     // Draw rectangles
     DrawTexture(menu_game, 65, 358, WHITE);
