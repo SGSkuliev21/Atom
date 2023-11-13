@@ -18,6 +18,8 @@ private:
     const char* temp;
     Texture2D fontTexture;
     Image fontImage;
+    int randomLine;
+
 public:
     std::string getEquation();
     randomChemistry();
