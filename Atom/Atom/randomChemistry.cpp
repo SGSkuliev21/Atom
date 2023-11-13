@@ -2,6 +2,7 @@
 #include <string>
 
 
+
 randomChemistry::randomChemistry()
 {
     srand(time(0));
@@ -19,19 +20,19 @@ randomChemistry::randomChemistry()
     randomLine = rand() % 20;
     randomLineEq = linesEq[randomLine];
     tempEq = randomLineEq.c_str();
-    //std::string rightEL = linesEl[randomLineEq];
     inputFileEq.close();
 
 }
 
-void randomChemistry::drawChemistryReactions(std::vector<Vector2>& equationsPos, std::vector<std::string>& equations)
+void randomChemistry::drawChemistryReactions(std::vector<Vector2>& equationsPos, std::vector<std::string>& equations, std::vector<Rectangle>& equationsRec)
 {
     DrawText(tempEq, 400, 0, 30, BLACK);
-    std::cout << randomLine;
     for (int i = 0; i < equations.size(); i++)
     {
         DrawText(equations[i].c_str(), 100 + (equationsPos[i].x - MeasureText(equations[i].c_str(), 30) / 2), equationsPos[i].y + 30, 30, BLACK);
         equationsPos[i].y = equationsPos[i].y + 1;
+        equationsRec[i].y = equationsRec[i].y + 1;
+
     }
 }
 
@@ -49,6 +50,8 @@ std::string randomChemistry::getEquation()
     }
     randomLineEl = linesEl[rand() % 20];
     tempEl = randomLineEl.c_str();
+    rightEl = linesEl[randomLine];
+    
     inputFileEl.close();
     return tempEl;
 }

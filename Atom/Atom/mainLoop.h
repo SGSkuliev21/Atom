@@ -17,7 +17,7 @@ public:
 
     void draw();
     void update();
-
+    void gameReset();
     void runGame();
     void collision();
     void loseGame();

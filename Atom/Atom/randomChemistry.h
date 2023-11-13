@@ -19,13 +19,17 @@ private:
     Texture2D fontTexture;
     Image fontImage;
     int randomLine;
+    
+    
 
 public:
     std::string getEquation();
     randomChemistry();
     const char* tempEl;
+    Rectangle recEl;
+    std::string rightEl;
     bool showEl = false;
-    void drawChemistryReactions(std::vector<Vector2> &equationsPos, std::vector<std::string> &equations);
+    void drawChemistryReactions(std::vector<Vector2> &equationsPos, std::vector<std::string> &equations, std::vector<Rectangle> &equationsRec);
 };
 
 

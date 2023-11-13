@@ -9,11 +9,13 @@ Ball::Ball()
     radius = 15;
 }
 
-void Ball::drawBall() {
+void Ball::drawBall() 
+{
     DrawCircle(position.x, position.y, radius, RED);
 }
 
-void Ball::moveBall() {
+void Ball::moveBall() 
+{
     position.x += speedBallX;
     position.y += speedBallY;
 }

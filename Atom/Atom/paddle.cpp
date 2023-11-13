@@ -14,7 +14,9 @@ void Paddle::drawPaddle() {
     DrawRectangleRec(paddle, RED);
 }
 
-void Paddle::paddleMovement() {
+void Paddle::paddleMovement() 
+{
+
     if (IsKeyDown(KEY_A)) {
         paddle.x -= speed * GetFrameTime();
     }

@@ -7,9 +7,12 @@ Paddle paddle;
 Blocks blocks;
 randomChemistry chem;
 
+SceneType currentScene;
 
 std::vector<Vector2> equationsPos;
 std::vector<std::string> equations;
+
+std::vector<Rectangle>equationsRec;
 
 Game::Game() {
 
@@ -17,7 +20,7 @@ Game::Game() {
 
 void Game::draw()
 {
-    chem.drawChemistryReactions(equationsPos, equations);
+    chem.drawChemistryReactions(equationsPos, equations, equationsRec);
     blocks.drawRectangle();
     ball.drawBall();
     paddle.drawPaddle();
@@ -29,8 +32,42 @@ void Game::update()
     paddle.paddleMovement();
 }
 
+void Game::gameReset()
+{
+    ball.position.x = 500;
+    ball.position.y = 735;
+    paddle.paddleX = 500;
+    paddle.paddleY = 750;
+    paddle.paddle = {paddle.paddleX, paddle.paddleY, 100, 15 };
+    blocks.resetBlocks();
+    equations.clear();
+    equationsPos.clear();
+}
+
 void Game::collision()
 {
+    for (int i = 0; i < equationsRec.size(); i++)
+    {
+        auto rec = equationsRec[i];
+        
+            DrawLineV({ rec.x, rec.y }, { rec.x + rec.width, rec.y }, {0,0,0,0});
+            DrawLineV({ rec.x + rec.width, rec.y }, { rec.x + rec.width, rec.y + rec.height }, { 0,0,0,0 });
+            DrawLineV({ rec.x, rec.y }, { rec.x, rec.y + rec.height }, { 0,0,0,0 });
+            DrawLineV({ rec.x, rec.y + rec.height }, { rec.x + rec.width, rec.y + rec.height }, { 0,0,0,0 });
+        if (CheckCollisionRecs(paddle.paddle, equationsRec[i]))
+        {
+            if (chem.rightEl == equations[i])
+            {
+                currentScene = WON_MENU;
+            }
+            else
+            {
+                currentScene = LOST_MENU;
+            }
+        }
+
+    }
+    
     if ((ball.position.x + ball.radius) >= 1200 || (ball.position.x - ball.radius) <= 0)
     {
         ball.speedBallX *= -1;
@@ -66,6 +103,7 @@ void Game::collision()
                 }
                 equationsPos.push_back(blockCenter);
                 equations.push_back(chem.getEquation());
+                equationsRec.push_back({ blockCenter.x - 50, blockCenter.y + 30,  300, 30});
                 blocks.blocks[i][j].isHittable = false;
                 blocks.blocks[i][j].rec.x = 100000;
                 blocks.blocks[i][j].rec.y = 100000;
@@ -79,14 +117,14 @@ void Game::loseGame()
 {
     if ((ball.position.y + ball.radius) >= 800)
     {
-        EndDrawing();
+        currentScene = LOST_MENU;
     }
 }
 
 void Game::runGame()
 {
-    SceneType currentScene = INFO_MENU;
-
+    
+    currentScene = MAIN_MENU;
     InitWindow(1200, 800, "Atom");
     while (!WindowShouldClose())
     {
@@ -96,6 +134,7 @@ void Game::runGame()
         {
             case MAIN_MENU:
                 mainMenu(currentScene);
+                gameReset();
                 break;
             case INFO_MENU:
                 infoMenu(currentScene);
@@ -109,9 +148,11 @@ void Game::runGame()
                 break;
             case WON_MENU:
                 wonMenu(currentScene);
+                gameReset();
                 break;
             case LOST_MENU:
                 lostMenu(currentScene);
+                gameReset();
                 break;
         }
         EndDrawing();
