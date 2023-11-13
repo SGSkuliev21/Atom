@@ -5,7 +5,6 @@
 randomChemistry::randomChemistry()
 {
     srand(time(0));
-    
 
     std::string filenameEq = "./Chemistry_reactions.txt";
     std::ifstream inputFileEq(filenameEq);
@@ -19,8 +18,9 @@ randomChemistry::randomChemistry()
     }
     randomLineEq = linesEq[rand() % 20];
     tempEq = randomLineEq.c_str();
+    //std::string rightEL = linesEl[randomLineEq];
     inputFileEq.close();
-   
+
 }
 
 void randomChemistry::drawChemistryReactions(std::vector<Vector2>& equationsPos, std::vector<std::string>& equations)
@@ -28,7 +28,8 @@ void randomChemistry::drawChemistryReactions(std::vector<Vector2>& equationsPos,
     DrawText(tempEq, 450, 0, 30, BLACK);
     for (int i = 0; i < equations.size(); i++)
     {
-        DrawText(equations[i].c_str(), equationsPos[i].x - MeasureText(equations[i].c_str(), 30) / 2, equationsPos[i].y, 30, BLACK);
+        DrawText(equations[i].c_str(), 100 + (equationsPos[i].x - MeasureText(equations[i].c_str(), 30) / 2), equationsPos[i].y + 30, 30, BLACK);
+        equationsPos[i].y = equationsPos[i].y + 1;
     }
 }
 

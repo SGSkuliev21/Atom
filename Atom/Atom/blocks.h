@@ -11,8 +11,8 @@ private:
     int blockHeight;
     int blockWidth;
 
-    float xCoordinates[4] = { 250, 500, 750, 1000};
-    float yCoordinates[12] = { 50, 150, 250, 350, 450, 550, 650, 750, 850, 950, 1050, 1150 };
+    float xCoordinates[4] = { 250, 550, 800, 850 };
+    float yCoordinates[12] = { 50, 150, 250, 350, 450, 550, 650, 750, 850, 950, 1050, 1050 };
 
 public:
 

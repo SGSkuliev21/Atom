@@ -2,8 +2,8 @@
 
 Blocks::Blocks()
 {
-    blockHeight = 50;
-    blockWidth = 150;
+    blockHeight = 75;
+    blockWidth = 100;
 
     for (int rows = 0; rows < 12; ++rows)
     {
