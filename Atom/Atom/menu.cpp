@@ -36,28 +36,85 @@ void mainMenu(SceneType& sceneState) {
         }
     }
     DrawTexture(background, 0, 0, WHITE);
-    DrawTexture(game_title, 74, 41, BLACK);
+    DrawTexture(game_title, 400, 33, WHITE);
 
     // Draw rectangles
-    DrawTexture(menu_game, 65, 358, WHITE);
-    DrawTexture(menu_about, 65, 479, WHITE);
-    DrawTexture(menu_quit, 65, 613, WHITE);
+    DrawTexture(menu_game, 400, 358, WHITE);
+    DrawTexture(menu_about, 400, 479, WHITE);
+    DrawTexture(menu_quit, 400, 613, WHITE);
 
 }
-void secondMenu(SceneType& sceneState) {
+void infoMenu(SceneType& sceneState) {
     Texture2D menu_back = LoadTexture("img/buttons/back.png");
-    Texture2D game_title = LoadTexture("img/logo.png");
+    Texture2D game_title = LoadTexture("img/logo1.png");
+    Texture2D rulesGame = LoadTexture("img/rules.png");
     Texture2D background = LoadTexture("img/background1.png");
 
     bool nextState = IsMouseButtonPressed(MOUSE_BUTTON_LEFT);
 
-    if (CheckCollisionPointRec(GetMousePosition(), Rectangle({ 488, 661, 304, 86 }))) {
+    if (CheckCollisionPointRec(GetMousePosition(), Rectangle({ 444, 661, 304, 86 }))) {
         menu_back = LoadTexture("img/buttons/back1.png");
         if (nextState) {
             sceneState = MAIN_MENU;
         }
     }
     DrawTexture(background, 0, 0, WHITE);
-    DrawTexture(menu_back, 488, 661, WHITE);
+    DrawTexture(rulesGame, 66, 261, WHITE);
+    DrawTexture(game_title, 400, 33, WHITE);
+    DrawTexture(menu_back, 444, 661, WHITE);
 
+}
+void wonMenu(SceneType& sceneState) {
+    Texture2D menu_back = LoadTexture("img/buttons/back2.png");
+    Texture2D menu_exit = LoadTexture("img/buttons/exit2.png");
+    Texture2D game_title = LoadTexture("img/logo1.png");
+    Texture2D background = LoadTexture("img/background1.png");
+    Texture2D text_won = LoadTexture("img/won.png");
+
+    bool nextState = IsMouseButtonPressed(MOUSE_BUTTON_LEFT);
+
+    if (CheckCollisionPointRec(GetMousePosition(), Rectangle({ 75, 628, 371, 103 }))) {
+        menu_exit = LoadTexture("img/buttons/exit3.png");
+        if (nextState) {
+            CloseWindow();
+        }
+    }    
+    if (CheckCollisionPointRec(GetMousePosition(), Rectangle({ 820, 628, 371, 103 }))) {
+        menu_back = LoadTexture("img/buttons/back3.png");
+        if (nextState) {
+            sceneState = MAIN_MENU;
+        }
+    }
+    DrawTexture(background, 0, 0, WHITE);
+    DrawTexture(text_won, 220, 240, WHITE);
+    DrawTexture(game_title, 400, 33, WHITE);
+    DrawTexture(menu_back, 820, 628, WHITE);
+    DrawTexture(menu_exit, 75, 628, WHITE);
+}
+void lostMenu(SceneType& sceneState) {
+    Texture2D menu_back = LoadTexture("img/buttons/back2.png");
+    Texture2D menu_exit = LoadTexture("img/buttons/exit2.png");
+    Texture2D game_title = LoadTexture("img/logo1.png");
+    Texture2D background = LoadTexture("img/background1.png");
+    Texture2D text_lost = LoadTexture("img/lost.png");
+
+    bool nextState = IsMouseButtonPressed(MOUSE_BUTTON_LEFT);
+
+    if (CheckCollisionPointRec(GetMousePosition(), Rectangle({ 75, 628, 371, 103 }))) {
+        menu_exit = LoadTexture("img/buttons/exit3.png");
+        if (nextState) {
+            CloseWindow();
+        }
+    }    
+    if (CheckCollisionPointRec(GetMousePosition(), Rectangle({ 820, 628, 371, 103 }))) {
+        menu_back = LoadTexture("img/buttons/back3.png");
+        if (nextState) {
+            sceneState = MAIN_MENU;
+        }
+    }
+    DrawTexture(background, 0, 0, WHITE);
+    DrawTexture(text_lost, 200, 265, WHITE);
+    DrawTexture(game_title, 410, 33, WHITE);
+    DrawTexture(menu_back, 820, 628, WHITE);
+    DrawTexture(menu_exit, 75, 628, WHITE);
 }

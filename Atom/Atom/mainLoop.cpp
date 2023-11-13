@@ -84,7 +84,7 @@ void Game::loseGame()
 
 void Game::runGame()
 {
-    SceneType currentScene = MAIN_MENU;
+    SceneType currentScene = INFO_MENU;
 
     InitWindow(1200, 800, "Atom");
     while (!WindowShouldClose())
@@ -97,7 +97,7 @@ void Game::runGame()
                 mainMenu(currentScene);
                 break;
             case INFO_MENU:
-                secondMenu(currentScene);
+                infoMenu(currentScene);
                 break;
             case GAME_MENU:
                 BeginDrawing();
@@ -106,9 +106,14 @@ void Game::runGame()
                 update();
                 draw();
                 break;
+            case WON_MENU:
+                wonMenu(currentScene);
+                break;
+            case LOST_MENU:
+                lostMenu(currentScene);
+                break;
         }
         EndDrawing();
-
     }
     CloseWindow();
 }
