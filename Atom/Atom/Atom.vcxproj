@@ -138,6 +138,9 @@
     <ClCompile Include="randomChemistry.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\raylib\include\raylib.h" />
+    <ClInclude Include="..\raylib\include\raymath.h" />
+    <ClInclude Include="..\raylib\include\rlgl.h" />
     <ClInclude Include="ball.h" />
     <ClInclude Include="blocks.h" />
     <ClInclude Include="mainLoop.h" />

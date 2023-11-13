@@ -28,7 +28,7 @@ void randomChemistry::drawChemistryReactions(std::vector<Vector2>& equationsPos,
     DrawText(tempEq, 450, 0, 30, BLACK);
     for (int i = 0; i < equations.size(); i++)
     {
-        DrawText(equations[i].c_str(), equationsPos[i].x, equationsPos[i].x, 30, BLACK);
+        DrawText(equations[i].c_str(), equationsPos[i].x - MeasureText(equations[i].c_str(), 30) / 2, equationsPos[i].y, 30, BLACK);
     }
 }
 

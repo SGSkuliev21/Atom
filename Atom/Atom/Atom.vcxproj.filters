@@ -53,5 +53,14 @@
     <ClInclude Include="randomChemistry.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\raylib\include\raylib.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\raylib\include\raymath.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\raylib\include\rlgl.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
