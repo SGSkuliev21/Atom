@@ -3,6 +3,7 @@
 #include "ball.h"
 #include "randomChemistry.h"
 
+
 Ball ball;
 Paddle paddle;
 Blocks blocks;
@@ -87,19 +88,31 @@ void Game::loseGame()
 
 void Game::runGame()
 {
+    SceneType currentScene = MAIN_MENU;
+
     InitWindow(1200, 800, "Atom");
     while (!WindowShouldClose())
     {
-        loseGame();
-        collision();
-        update();
-
-        BeginDrawing();
-        ClearBackground(RAYWHITE);
-
-        draw();
-
+        ClearBackground(DARKBLUE);
+        
+        switch (currentScene) 
+        {
+            case MAIN_MENU:
+                mainMenu(currentScene);
+                break;
+            case INFO_MENU:
+                secondMenu(currentScene);
+                break;
+            case GAME_MENU:
+                BeginDrawing();
+                loseGame();
+                collision();
+                update();
+                draw();
+                break;
+        }
         EndDrawing();
+
     }
     CloseWindow();
 }

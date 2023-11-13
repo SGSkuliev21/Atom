@@ -5,7 +5,7 @@ Paddle::Paddle()
 {
     paddleX = 500;
     paddleY = 750;
-    speed = 300;
+    speed = 600;
 
     paddle = { paddleX, paddleY, 100, 15 };
 }

@@ -3,6 +3,8 @@
 #include "blocks.h"
 #include "paddle.h"
 #include "ball.h"
+#include "menu.h"
+
 
 class Game {
 private:

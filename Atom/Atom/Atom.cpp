@@ -4,7 +4,7 @@
 int main()
 {
 
-	Game game;
-	game.runGame();
- 
+	Game* game = new Game;
+	game->runGame();
+
 }

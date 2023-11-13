@@ -134,6 +134,7 @@
     <ClCompile Include="ball.cpp" />
     <ClCompile Include="blocks.cpp" />
     <ClCompile Include="mainLoop.cpp" />
+    <ClCompile Include="menu.cpp" />
     <ClCompile Include="paddle.cpp" />
     <ClCompile Include="randomChemistry.cpp" />
   </ItemGroup>
@@ -144,6 +145,7 @@
     <ClInclude Include="ball.h" />
     <ClInclude Include="blocks.h" />
     <ClInclude Include="mainLoop.h" />
+    <ClInclude Include="menu.h" />
     <ClInclude Include="paddle.h" />
     <ClInclude Include="precompile.h" />
     <ClInclude Include="randomChemistry.h" />
