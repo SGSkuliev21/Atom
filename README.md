@@ -1,22 +1,22 @@
 <h1 align="center">Team ATOM</h1>
 
 <p align="center">
-    <img src ="docs/banner.png"/>
+    <img src ="Atom/Atom/img/banner.png"/>
 </p>
 
 ## 🧒 Our Team
 
 <b>
-<a href = “https://github.com/1> 🟦 Stoyan Skuliev [ Scrum Trainer ] </a><br>
-<a href=“https://github.com/”> 🟥 Dimitar Byandov [ FrontEnd Developer] </a><br>
-<a href=“https://github.com/”> 🟨 Angel Angelov [ BackEnd Developer ] </a><br>
-<a href=“https://github.com/”> 🟩 Vicho Vichev [ BackEnd Developer ] </a><br>
+<a href = “https://github.com/SGSkuliev21”> 🟦 Stoyan Skuliev [ Scrum Trainer ] </a><br>
+<a href=“https://github.com/DKByandov21”> 🟥 Dimitar Byandov [ FrontEnd Developer] </a><br>
+<a href=“https://github.com/AHAngelov”> 🟨 Angel Angelov [ BackEnd Developer ] </a><br>
+<a href=“https://github.com/VDVichev21”> 🟩 Vicho Vichev [ BackEnd Developer ] </a><br>
 </b>
 
 ## 💻 About
 
 <br>
-<b><p align="center"></p></b>
+<b><p align="center">The game uses a paddle and bouncing ball to break through a wall of bricks. Each broken block releases a chemistry reaction, adding an extra layer of excitement and challenge.</p></b>
 <br>
 
 ## 🗂️Our Technologies
