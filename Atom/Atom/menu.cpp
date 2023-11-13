@@ -17,19 +17,19 @@ void mainMenu(SceneType& sceneState) {
 
     bool nextState = IsMouseButtonPressed(MOUSE_BUTTON_LEFT);
 
-    if (CheckCollisionPointRec(GetMousePosition(), Rectangle ({ 65, 358, 371, 104 }))) {
+    if (CheckCollisionPointRec(GetMousePosition(), Rectangle ({ 400, 358, 371, 104 }))) {
         menu_game = LoadTexture("img/buttons/game1.png");
         if (nextState) {
             sceneState = GAME_MENU;
         }
     }
-    if (CheckCollisionPointRec(GetMousePosition(), Rectangle({ 65, 479, 371, 104 }))) {
+    if (CheckCollisionPointRec(GetMousePosition(), Rectangle({ 400, 479, 371, 104 }))) {
         menu_about = LoadTexture("img/buttons/info1.png");
         if (nextState) {
             sceneState = INFO_MENU;
         }
     }
-    if (CheckCollisionPointRec(GetMousePosition(), Rectangle({ 65, 613, 371, 104 }))) {
+    if (CheckCollisionPointRec(GetMousePosition(), Rectangle({ 400, 613, 371, 104 }))) {
         menu_quit = LoadTexture("img/buttons/exit1.png");
         if (nextState) {
             CloseWindow();
