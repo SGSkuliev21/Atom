@@ -32,6 +32,7 @@
 
 <p align="left">
     <a href="https://www.adobe.com/creativecloud.html"><img src="https://www.adobe.com/content/dam/shared/images/product-icons/svg/creative-cloud.svg" alt="adobe creative cloud" width=48px /></a>
+    <a href="https://www.raylib.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Raylib_logo.png" alt="raylib" width=48px /></a>
 </p>
 
 ### 🔨📄Used tools for our documentation, presentation & communication:
@@ -48,13 +49,13 @@
 
 ## 📄Documents
 
-<a href="">QA Documentation </a>
+<a href="https://github.com/SGSkuliev21/Atom/blob/main/docs/QA_documentation.xlsx">QA Documentation </a>
 
-<a href="">Documentation </a>
+<a href="https://github.com/SGSkuliev21/Atom/blob/main/docs/Documentation.docx">Documentation </a>
 
-<a href="">Presentation </a>
+<a href="https://github.com/SGSkuliev21/Atom/blob/main/docs/Presentation.pptx">Presentation </a>
 
-<a href="">Test Plan </a>
+<a href="https://github.com/SGSkuliev21/Atom/blob/main/docs/Test_Plan.docx">Test Plan </a>
 
 <hr>
 
