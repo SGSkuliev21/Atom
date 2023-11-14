@@ -23,12 +23,17 @@ private:
     
 
 public:
+
+    //Returns random equation to solve
     std::string getEquation();
+
     randomChemistry();
     const char* tempEl;
     Rectangle recEl;
     std::string rightEl;
     bool showEl = false;
+
+    //Renders chemical reactions 
     void drawChemistryReactions(std::vector<Vector2> &equationsPos, std::vector<std::string> &equations, std::vector<Rectangle> &equationsRec);
 };
 

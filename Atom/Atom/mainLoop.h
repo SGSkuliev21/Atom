@@ -15,10 +15,21 @@ private:
 public:
     Game();
 
+    //Renders everyting
     void draw();
+
+    //Updates all object positions
     void update();
+
+    //Resets everything
     void gameReset();
+
+    //Starts the game
     void runGame();
+
+    //Checks for all collisions
     void collision();
+
+    //Calls the menu for losing a game
     void loseGame();
 };

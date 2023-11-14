@@ -30,8 +30,8 @@ void randomChemistry::drawChemistryReactions(std::vector<Vector2>& equationsPos,
     for (int i = 0; i < equations.size(); i++)
     {
         DrawText(equations[i].c_str(), 100 + (equationsPos[i].x - MeasureText(equations[i].c_str(), 30) / 2), equationsPos[i].y + 30, 30, BLACK);
-        equationsPos[i].y = equationsPos[i].y + 1;
-        equationsRec[i].y = equationsRec[i].y + 1;
+        equationsPos[i].y = equationsPos[i].y + 0.1;
+        equationsRec[i].y = equationsRec[i].y + 0.1;
 
     }
 }

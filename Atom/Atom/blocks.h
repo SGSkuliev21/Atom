@@ -30,6 +30,10 @@ public:
     fallLetter fallLetter;
     Block blocks[12][4];
     Blocks();
+
+    //Restores the blocks into their original position
     void resetBlocks();
+
+    //Renders rectangle on screen
     void drawRectangle();
 };

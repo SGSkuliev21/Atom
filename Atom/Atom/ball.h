@@ -12,6 +12,9 @@ public:
     float speedBallX, speedBallY;
     Ball();
 
+    //Renders ball
     void drawBall();
+
+    //Updates ball's position
     void moveBall();
 };

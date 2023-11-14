@@ -11,7 +11,14 @@ enum SceneType
     LOST_MENU
 };
 
+//Renders main menu
 void mainMenu(SceneType& sceneState);
+
+//Renders information about the game
 void infoMenu(SceneType& sceneState);
+
+//Renders the menu for winning a game
 void wonMenu(SceneType& sceneState);
+
+//Renders the menu for losing a game 
 void lostMenu(SceneType& sceneState);

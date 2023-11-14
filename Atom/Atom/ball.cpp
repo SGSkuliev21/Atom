@@ -2,8 +2,8 @@
 
 Ball::Ball()
 {
-    speedBallX = 2;
-    speedBallY = 2;
+    speedBallX = 0.1;
+    speedBallY = 0.1;
 
     position = { 500, 735 };
     radius = 15;
